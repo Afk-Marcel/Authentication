@@ -91,17 +91,67 @@ The system uses a MySQL database with the following tables:
    - Create a MySQL database named PoisePMS.
    - Use the provided SQL script to create the necessary tables and insert sample data.
    - Create tables:
-   
-     <img width="400" alt="Projects Table" src="https://github.com/user-attachments/assets/dd8ce9e0-86ff-46f6-8bb0-9604cd9c1470">
-     <img width="400" alt="Contractors Table" src="https://github.com/user-attachments/assets/4752e470-a0c2-4257-a83e-433a231c3dff">
-     <img width="400" alt="Customers Table" src="https://github.com/user-attachments/assets/dc15f3a2-fb38-4125-8a51-6278a332712a">
-     <img width="400" alt="Architects Table" src="https://github.com/user-attachments/assets/8e69e6a4-dc76-4225-b7d7-8c0e1fa096ae">
+
+     - Projects:
+
+     ```bash
+      CREATE TABLE Projects (project_id INT AUTO_INCREMENT PRIMARY KEY, project_number INT, project_name VARCHAR (100),
+      building_type VARCHAR (100), address VARCHAR (255), erf_number VARCHAR (50), total_fee DOUBLE, amount_paid DOUBLE,
+      deadline DATE, completion_date DATE, architect_id INT, contractor_id INT, customer_id INT, CONSTRAINT fk_architect
+      FOREIGN KEY (architect_id) REFERENCES Architects (architect_id), CONSTRAINT fk_contractor FOREIGN KEY (contractor_id)
+      REFERENCES Contractors (contractor_id), CONSTRAINT fk_customer FOREIGN KEY (customer_id) REFERENCES Customers (customer_id));
+     ```
+
+     - Contractors:
+
+     ```bash
+     CREATE TABLE Contractors (contractor_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR (100), phone_number VARCHAR (20),
+     email VARCHAR (100), physical_address VARCHAR (255));
+     ```
+
+     - Customers:
+
+     ```bash
+     CREATE TABLE Customers (customer_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR (100), phone_number VARCHAR(20),
+     email VARCHAR (100), physical_address VARCHAR (255 ));
+     ```
+
+     - Architects:
+
+     ```bash
+     CREATE TABLE Architects (architect_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR (100), phone_number VARCHAR (20),
+     email VARCHAR (100), physical_address VARCHAR (255));
+     ```
 
    - Insert example:
-     <img width="1331" alt="Projects Insert" src="https://github.com/user-attachments/assets/4b68ee34-a91f-4609-9085-56b336c4141f">
-     <img width="745" alt="Contractor Insert" src="https://github.com/user-attachments/assets/974579f2-3b2b-46ef-b65d-476385d0f7a6">
-     <img width="711" alt="Customers Insert" src="https://github.com/user-attachments/assets/63827e2d-aaa9-437c-9f72-d3e77d931169">
-     <img width="734" alt="Architect Insert" src="https://github.com/user-attachments/assets/f175b0ea-b7c7-4fa5-9a47-c7bdfaa502b0">
+
+     - Projects:
+
+     ```bash
+     INSERT INTO projects (project_number, project_name, building_type, address, erf_number, total_fee, amount_paid, deadline, completion_date, architect_id, contractor_id, customer_id)
+     VALUES (101, 'Project One', 'House', '123 Main St', 'ERF123', 100000.00, 50000.00, '2024-12-31', NULL, 1, 1, 1);
+     ```
+
+     - Contractors:
+
+     ```bash
+     INSERT INTO contractors (contractor_id, name, phone_number, email, physical_address)
+     VALUES (1, 'Jane Contractor', 0937654322', 'jane.contractor@example.com, '456 Contractor Rd');
+     ```
+
+     - Customers:
+
+     ```bash
+     INSERT INTO customers (customer_id, name, phone_number, email, physical_address)
+     VALUES (1, 'Mike Customer', '1122334455', 'mike.customer@example.com', '789 Customer Blvd');
+     ```
+
+     - Architect
+
+     ```bash
+     INSERT INTO architects (architect_id, name, phone_number, email, physical_address)
+     VALUES (1, 'John Architect', 1234567890, 'john.architect@example.com', '123 Architect St');
+     ```
 
 3. **Configure Database Connection**:
 
