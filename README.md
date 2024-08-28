@@ -91,10 +91,10 @@ The system uses a MySQL database with the following tables:
    - Create a MySQL database named PoisePMS.
    - Use the provided SQL script to create the necessary tables and insert sample data.
    - Create tables:
-     <img width="390" alt="Projects Table" src="https://github.com/user-attachments/assets/dd8ce9e0-86ff-46f6-8bb0-9604cd9c1470">
-     <img width="408" alt="Contractors Table" src="https://github.com/user-attachments/assets/4752e470-a0c2-4257-a83e-433a231c3dff">
-     <img width="397" alt="Customers Table" src="https://github.com/user-attachments/assets/dc15f3a2-fb38-4125-8a51-6278a332712a">
-     <img width="409" alt="Architects Table" src="https://github.com/user-attachments/assets/8e69e6a4-dc76-4225-b7d7-8c0e1fa096ae">
+     <img width="400" alt="Projects Table" src="https://github.com/user-attachments/assets/dd8ce9e0-86ff-46f6-8bb0-9604cd9c1470">
+     <img width="400" alt="Contractors Table" src="https://github.com/user-attachments/assets/4752e470-a0c2-4257-a83e-433a231c3dff">
+     <img width="400" alt="Customers Table" src="https://github.com/user-attachments/assets/dc15f3a2-fb38-4125-8a51-6278a332712a">
+     <img width="400" alt="Architects Table" src="https://github.com/user-attachments/assets/8e69e6a4-dc76-4225-b7d7-8c0e1fa096ae">
 
    - Insert example:
      <img width="1331" alt="Projects Insert" src="https://github.com/user-attachments/assets/4b68ee34-a91f-4609-9085-56b336c4141f">
